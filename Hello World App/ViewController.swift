@@ -21,9 +21,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var createAccountButtonCenterConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var createAccountButtonTopConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        orLabel.isHidden = true
         //---Start listening keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -32,10 +33,8 @@ class ViewController: UIViewController {
         
         customizeButton()
     }
-    
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-
       emailTextFieldCenterConstraint.constant = 0
       UIView.animate(withDuration: 0.5) { [weak self] in
         self?.view.layoutIfNeeded()
@@ -64,6 +63,7 @@ class ViewController: UIViewController {
                        animations: { [weak self] in
                         self?.view.layoutIfNeeded()
             }, completion: nil)
+        orLabel.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +82,14 @@ class ViewController: UIViewController {
     @IBAction func createAccountButtonClicked(_ sender: Any) {
         //shakeAnimation(button: createAccountButton)
         createAccountUIChange()
-        performSegue(withIdentifier: "createAccount", sender: self)
+        createAccountButtonTopConstraint.constant += view.bounds.height
+        UIView.animate(withDuration: 2.5,
+                   delay: 0.6,
+                   options: [],
+                   animations: { [weak self] in
+                    self?.view.layoutIfNeeded()
+        }, completion: nil)
+        self.performSegue(withIdentifier: "createAccount", sender: self)
     }
     func customizeButton(){
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2
@@ -123,11 +130,8 @@ class ViewController: UIViewController {
         loginButton.isHidden = true
         
     }
-
     
     //--- Features
-    }
-    
     func shakeAnimation(button: UIButton) {
         let key: String = "position"
         let shake           = CABasicAnimation(keyPath: key)
@@ -147,5 +151,13 @@ class ViewController: UIViewController {
         button.layer.add(shake, forKey: key)
     }
     //---
+}
+
+    
+    
+    
+
+
+    
 
 

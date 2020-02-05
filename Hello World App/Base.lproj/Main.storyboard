@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hello_World_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Hello_World_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,9 +103,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MrI-UG-rlV"/>
                     <connections>
                         <outlet property="createAccountButton" destination="Sn9-Gx-4n3" id="d9c-14-isC"/>
                         <outlet property="createAccountButtonCenterConstraint" destination="GyB-Z0-f1X" id="M8U-tS-183"/>
+                        <outlet property="createAccountButtonTopConstraint" destination="BzA-wd-gdZ" id="Wgt-2J-WZq"/>
                         <outlet property="emailTextField" destination="3xI-4b-xqi" id="jXR-4m-5KU"/>
                         <outlet property="emailTextFieldCenterConstraint" destination="jac-al-N3x" id="ng3-z1-udM"/>
                         <outlet property="loginButton" destination="QBz-jU-OFr" id="0sX-fR-xiw"/>
@@ -202,16 +204,29 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-N7-zav">
+                                <rect key="frame" x="117" y="834" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="6wI-I1-XGH"/>
+                                    <constraint firstAttribute="height" constant="30" id="pES-pu-AbD"/>
+                                </constraints>
+                                <state key="normal" title="Already have an account ?"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="iP3-2m-mmi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ib8-Jl-mTe" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="1wr-Ng-ATT"/>
+                            <constraint firstItem="rxJ-N7-zav" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="2Fg-yR-aVi"/>
                             <constraint firstItem="Zzw-bt-xH4" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="3SH-RO-5pk"/>
                             <constraint firstItem="3W6-J4-tbm" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="88T-aP-BnG"/>
                             <constraint firstItem="Zzw-bt-xH4" firstAttribute="top" secondItem="Ib8-Jl-mTe" secondAttribute="bottom" constant="50" id="IBZ-gr-xgc"/>
                             <constraint firstItem="iXL-Xe-pyi" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="Mfa-XK-hjt"/>
                             <constraint firstItem="0rO-XD-XOr" firstAttribute="top" secondItem="iXL-Xe-pyi" secondAttribute="bottom" constant="20" id="RKu-rY-F1o"/>
                             <constraint firstItem="iXL-Xe-pyi" firstAttribute="top" secondItem="Zzw-bt-xH4" secondAttribute="bottom" constant="50" id="bsf-AY-X7S"/>
+                            <constraint firstItem="rxJ-N7-zav" firstAttribute="top" secondItem="t3Z-a8-KWO" secondAttribute="bottom" constant="8" id="cDC-41-VMD"/>
                             <constraint firstItem="t3Z-a8-KWO" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="ehN-B2-7R8"/>
                             <constraint firstItem="0rO-XD-XOr" firstAttribute="centerX" secondItem="53K-7K-oaQ" secondAttribute="centerX" id="fzD-aO-1YE"/>
                             <constraint firstItem="Ib8-Jl-mTe" firstAttribute="top" secondItem="3W6-J4-tbm" secondAttribute="bottom" constant="8" id="gzh-AK-8Qi"/>
@@ -222,6 +237,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="PYk-4g-Y8a"/>
                     <connections>
+                        <outlet property="alreadyHaveAccountButton" destination="rxJ-N7-zav" id="stB-8I-6g2"/>
                         <outlet property="appNameImageTopConstraint" destination="gzh-AK-8Qi" id="8Hg-FB-voA"/>
                         <outlet property="emailButton" destination="t3Z-a8-KWO" id="9WI-G6-Cox"/>
                         <outlet property="emailButtonTopConstraint" destination="qhr-8r-I5F" id="Cuw-ev-FFK"/>

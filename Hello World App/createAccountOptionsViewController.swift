@@ -14,6 +14,7 @@ class createAccountOptionsViewController: UIViewController {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var alreadyHaveAccountButton: UIButton!
     
     @IBOutlet weak var appNameImageTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
@@ -36,21 +37,11 @@ class createAccountOptionsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        headerTopConstraint.constant = appNameImageTopConstraint.constant
-//        UIView.animate(withDuration: 0.5) { [weak self] in
-//            self?.view.layoutIfNeeded()
-//        }
-        
+        alreadyHaveAccountButton.isHidden = true
         facebookButtonTopConstraint.constant = 50
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.view.layoutIfNeeded()
         }
-//        UIView.animate(withDuration: 0.5,
-//                        delay: 0.3,
-//                        options: [],
-//                        animations: { [weak self] in
-//                        self?.view.layoutIfNeeded()
-//            }, completion: nil)
         
         googleButtonTopConstraint.constant = 20
             UIView.animate(withDuration: 0.5,
@@ -67,6 +58,8 @@ class createAccountOptionsViewController: UIViewController {
                             animations: { [weak self] in
                             self?.view.layoutIfNeeded()
                 }, completion: nil)
+        
+        alreadyHaveAccountButton.isHidden = false;
     }
     
     override func viewWillAppear(_ animated: Bool) {
