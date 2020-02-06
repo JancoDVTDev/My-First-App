@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var createAccountButtonTopConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        orLabel.isHidden = true
+        //orLabel.isHidden = true
         //---Start listening keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
