@@ -15,7 +15,11 @@ struct Colors {
     static let csBlue = UIColor(red: 82.0/255.0, green: 113.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     static let csLightBlue = UIColor(red: 56.0/255.0, green: 182.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     static let csBlack = UIColor(red: 55.0/255.0, green: 55.0/255.0, blue: 55.0/255.0, alpha: 1.0)
+    static let csGrey = UIColor(red: 125/255.0, green: 125/255.0, blue: 125/255.0, alpha: 1.0)
+    static let csWhite = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     
     static let csFacebook = UIColor(red: 65.0/255.0, green: 89.0/255.0, blue: 187.0/255.0, alpha: 1.0)
+    static let csLighFacebook = UIColor(red: 67/255, green: 85/255, blue: 164/255, alpha: 1.0)
     static let csGoogle = UIColor(red: 216.0/255.0, green: 80.0/255.0, blue: 64.0/255.0, alpha: 1.0)
+    static let csLightGoogle = UIColor(red: 200/255, green: 100/255, blue: 88/255, alpha: 1.0)
 }

@@ -74,16 +74,27 @@ class createAccountOptionsViewController: UIViewController {
         facebookButton.layer.cornerRadius = facebookButton.frame.size.height/2
         facebookButton.layer.masksToBounds = true
         facebookButton.setTitleColor(UIColor.white, for: .normal)
-        facebookButton.backgroundColor = Colors.csFacebook
+        setButtonShadow(button: facebookButton)
+        facebookButton.setGradientBackground(colorOne: Colors.csFacebook, colorTwo: Colors.csLighFacebook)
         
         googleButton.layer.cornerRadius = googleButton.frame.size.height/2
         googleButton.layer.masksToBounds = true
         googleButton.setTitleColor(UIColor.white, for: .normal)
-        googleButton.backgroundColor = Colors.csGoogle
+        setButtonShadow(button: googleButton)
+        googleButton.setGradientBackground(colorOne: Colors.csGoogle, colorTwo: Colors.csLightGoogle)
         
         emailButton.layer.cornerRadius = emailButton.frame.size.height/2
         emailButton.layer.masksToBounds = true
         emailButton.setTitleColor(UIColor.white, for: .normal)
-        emailButton.backgroundColor = Colors.csBlack
+        setButtonShadow(button: emailButton)
+        emailButton.setGradientBackground(colorOne: Colors.csBlack, colorTwo: Colors.csGrey)
+    }
+    
+    func setButtonShadow(button: UIButton) {
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowRadius = 30
+        button.layer.masksToBounds = true
     }
 }
