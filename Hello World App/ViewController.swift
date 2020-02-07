@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var createAccountButtonTopConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        orLabel.isHidden = true
+        //orLabel.isHidden = true
         //---Start listening keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -35,43 +35,44 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-      emailTextFieldCenterConstraint.constant = 0
-      UIView.animate(withDuration: 0.5) { [weak self] in
-        self?.view.layoutIfNeeded()
-      }
+      //emailTextFieldCenterConstraint.constant = 0
+//      UIView.animate(withDuration: 0.5) { [weak self] in
+//        self?.view.layoutIfNeeded()
+//      }
       
-      passwordTextFieldCenterConstraint.constant = 0
-      UIView.animate(withDuration: 0.5,
-                     delay: 0.3,
-                     options: [],
-                     animations: { [weak self] in
-                      self?.view.layoutIfNeeded()
-        }, completion: nil)
+      //passwordTextFieldCenterConstraint.constant = 0
+//      UIView.animate(withDuration: 0.5,
+//                     delay: 0.3,
+//                     options: [],
+//                     animations: { [weak self] in
+//                      self?.view.layoutIfNeeded()
+//        }, completion: nil)
         
         loginButtonCenterConstraint.constant = 0
+        createAccountButtonCenterConstraint.constant = 0
         UIView.animate(withDuration: 0.5,
-                       delay: 0.6,
+                       delay: 0.3,
                        options: [],
                        animations: { [weak self] in
                         self?.view.layoutIfNeeded()
           }, completion: nil)
         
-        createAccountButtonCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.9,
-                       options: [],
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-            }, completion: nil)
+        
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0.9,
+//                       options: [],
+//                       animations: { [weak self] in
+//                        self?.view.layoutIfNeeded()
+//            }, completion: nil)
         orLabel.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-        emailTextFieldCenterConstraint.constant -= view.bounds.width
-        passwordTextFieldCenterConstraint.constant -= view.bounds.width
+        //emailTextFieldCenterConstraint.constant -= view.bounds.width
+        //passwordTextFieldCenterConstraint.constant -= view.bounds.width
         loginButtonCenterConstraint.constant -= view.bounds.width
-        createAccountButtonCenterConstraint.constant -= view.bounds.width
+        createAccountButtonCenterConstraint.constant += view.bounds.width
     }
 
     @IBAction func loginButtonClicked(_ sender: Any) {
